@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas App</title>
+    <!---- Bootstrap -----> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!---- Mi CSS ---->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+</head>
+<body>
+
+    <%- include('../partials/nav'); -%>
+
+    <% if(success_msg.length > 0) { %>
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle-fill"></i>
+                <%= success_msg %>
+            <button type="button" class="close float-right" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>    
+            
+        </div> 
+        
+
+    <% } %>
+
+    <% if(error_msg.length > 0) { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-x-circle-fill"></i>
+            <button type="button" class="close float-right" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>    
+            <%= error_msg %>
+        </div>
+        
+    <% } %>
+
+    <% if(typeof error == 'object' && error.length > 0){ %>
+        <% for(let i=0; i < error.length; i++) { %>
+    
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle-fill"></i>
+                <button type="button" class="close float-right" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>    
+                <%= error[i] %>
+            </div>
+        <% } %>
+    <% } %>
+
+            
+
+
+
+        
+
+
+    
+

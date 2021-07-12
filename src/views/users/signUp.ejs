@@ -1,0 +1,32 @@
+<%- include('../layouts/header'); -%>
+
+<div class="row">
+    <div class="col-md-4 mx-auto p-5">
+        <div class="card">
+            <div class="card-header">
+                <h2>Registra una cuenta</h2>
+            </div>
+            <div class="card-body">
+                <form action="/signup" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Ingresa tu email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Ingresa tu contraseña">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirma tu contraseña">
+                    </div>
+                    <button class="btn btn-success btn-block">
+                        Registrarse
+                    </button>  
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../layouts/footer'); -%>
